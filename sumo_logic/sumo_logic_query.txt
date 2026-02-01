@@ -1,0 +1,4 @@
+_sourceCategory=application/logs "/api/data"
+| parse "response_time=*ms" as response_time_ms
+| where response_time_ms > 3000
+| count by _timeslice, response_time_ms

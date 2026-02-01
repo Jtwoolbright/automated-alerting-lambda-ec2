@@ -1,0 +1,27 @@
+{
+  "SearchName": "High CPU Alert - EC2 Instance",
+  "SearchDescription": "Alert triggered when EC2 instance CPU exceeds threshold",
+  "SearchQuery": "_sourceCategory=AWS/EC2/Metrics | where metric=CPUUtilization | where value > 80",
+  "SearchQueryUrl": "https://service.sumologic.com/ui/#/search/...",
+  "TriggerType": "Critical",
+  "TriggerTimeRange": "15m",
+  "TriggerTime": "01/31/2026 14:30:00 PM PST",
+  "TriggerCondition": "Greater than 80%",
+  "TriggerValue": "85.5",
+  "TriggerTimeStart": "01/31/2026 14:15:00 PM PST",
+  "TriggerTimeEnd": "01/31/2026 14:30:00 PM PST",
+  "SourceURL": "https://service.sumologic.com/ui/#/search/create",
+  "Results": [
+    {
+      "instance_id": "i-1234567890abcdef0",
+      "cpu_utilization": "85.5",
+      "timestamp": "2026-01-31T14:30:00Z"
+    }
+  ],
+  "NumRawResults": "1",
+  "Alert": {
+    "Name": "EC2 High CPU - Reboot Required",
+    "ID": "000000000ABC1234",
+    "Severity": "Critical"
+  }
+}
